@@ -12,6 +12,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - name: Display Swift version
+      run: swift --version
+
     - uses: actions/checkout@v2
 
     - name: Update Swift tools
