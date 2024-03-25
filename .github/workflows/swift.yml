@@ -8,14 +8,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: macos-latest
-
+    runs-on: macos-13
+    strategy:
+      matrix:
+        destination: [
+          'iOS',
+          'tvOS'
+        ]
     steps:
     - uses: actions/checkout@v2
-
-    - name: Update Swift tools
-      run: swift package tools-version --set 5.9.0
     
     - name: Display Swift version
       run: swift --version
